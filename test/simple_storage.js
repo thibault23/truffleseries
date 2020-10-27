@@ -48,7 +48,7 @@ contract("SimpleStorage", function ( accounts ) {
   describe("Initial deployment", async () => {
     it("should not be able to get the count", async () => {
       const ssInstance = await SimpleStorage.deployed();
-      await truffleAssert.reverts(ssInstance.getCount.call( { from: accounts[1] }));
+      await truffleAssert.reverts(ssInstance.getCount.call(accounts[0], { from: accounts[1]}));
 
     });
 });
